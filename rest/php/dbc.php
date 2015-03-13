@@ -59,15 +59,23 @@ class DBC {
 	}
 
 
+	//Public Interface
+	public function get_last_note()
+	{
+		return $this->process('SELECT * FROM character_notes ORDER BY id DESC LIMIT 1');
+	}
+
+
 	public function set_note($note)
 	{
 		$query_string = 'INSERT INTO character_notes (character_id, note) VALUES (1, "%s")';
 		$escaped_string = mysqli_real_escape_string ($this->_mysql, $note);
 		$query = sprintf($query_string, $escaped_string);
 
-		$r = $this->_mysql->query($query);
+		$this->_mysql->query($query);
 
-		return $r;
+		return $this->get_last_note();
+		//return $this->_mysql->insert_id;
 	}
 
 

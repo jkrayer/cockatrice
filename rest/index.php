@@ -25,11 +25,15 @@ $app->get('/', function() {
 });
 
 
-$app->post('/', function () {
-	//add new note
-	$dbc = $GLOBALS['dbc'];
+$app->post('/', function () use ($app) {
 
-	$dbc->set_note($_POST['note']);
+	$dbc = $GLOBALS['dbc'];
+	$request = $app->request();
+	$body = $request->getBody();
+	$input = json_decode($body);
+
+	echo $dbc->set_note($input->note);
+
 });
 
 

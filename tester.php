@@ -3,22 +3,8 @@ require 'rest/php/dbc.php';
 
 $dbc = new DBC('localhost', 'char_jkrayer', 'char_jkrayer', 'char_jkrayer');
 
+echo $dbc->get_last_note();
 
-echo "<pre>";
-echo $dbc->set_note('This is a ANOTHER note from tester.php');
-echo "</pre>";
-
-/*
-if (isset($_POST['note'])) {
-	echo $dbc->set_note($_POST['note']);
-}
-
-echo "<pre>I'm post";
-print_r($_POST);
-echo "</pre>";
-
-echo "set?=" . isset($_POST['note']);
-*/
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +20,11 @@ echo "set?=" . isset($_POST['note']);
 
 <body>
 
-<form method="post" action="tester.php" >
-	<input type="text" name="note" />
+<form action="rest/index.php" method="post">
+	<textarea name="j">{"note":"this is a fucking note","id":1}</textarea>
 	<button type="submit">Submit</button>
 </form>
+
 
 </body>
 </html>
