@@ -25,12 +25,19 @@
 
 		$scope.submitNote = function ($event) {
 
-			var data = {character_id: 1, note:$event.originalTarget[0].value};
+			var data = {
+				character_id: 1,
+				date: Date.now(),
+				note: $event.originalTarget[0].value
+			};
 
 			$http.post('rest/', data).
 				success(function(data, status, headers, config) {
 					//console.log(data, status, headers, config);
 					$scope.notes.push(data[0]);
+					//technically should check if the new lenght of greater than
+					//the former link before doing this
+					$event.originalTarget[0].value = '';
 					//console.log('p', data, status, headers, config);
 					// this callback will be called asynchronously
 					// when the response is available
@@ -49,9 +56,24 @@
 	app.directive('note', function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'templates/note.html'
+			templateUrl: 'templates/note.html',
+			replace: true
 		};
 	});
+
+//angular.directive('', ['', function(){
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		// scope: {}, // {} = isolate, true = child, false/undefined = no change
+		// controller: function($scope, $element, $attrs, $transclude) {},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+		// template: '',
+		// templateUrl: '',
+		// transclude: true,
+		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		//link: function($scope, iElm, iAttrs, controller) {
 
 }());
 

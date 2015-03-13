@@ -66,11 +66,16 @@ class DBC {
 	}
 
 
-	public function set_note($note)
+	public function set_note($data)
 	{
-		$query_string = 'INSERT INTO character_notes (character_id, note) VALUES (1, "%s")';
-		$escaped_string = mysqli_real_escape_string ($this->_mysql, $note);
-		$query = sprintf($query_string, $escaped_string);
+
+		$query_string = 'INSERT INTO character_notes (character_id, note, date) VALUES (%d, "%s", %d)';
+
+		$escaped_string = mysqli_real_escape_string ($this->_mysql, $data->note);
+		$id = (int)$data->character_id;
+		$date = (int)$data->date;
+
+		$query = sprintf($query_string, $id, $escaped_string, $date);
 
 		$this->_mysql->query($query);
 

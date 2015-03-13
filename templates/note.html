@@ -1,5 +1,4 @@
 <article class="note" data-id="{{note.id}}" data-cid="{{note.character_id}}">
-	<h6>{{note.date | date:'medium'}}</h6>
-	{{note.note}}
-	<br />the test value is {{test-val}}
+	<p>{{note.note}}
+	<span class="text-muted">{{note.date  | date:'MM/dd/yyyy @ h:mma'}}</span></p>
 </article>

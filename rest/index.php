@@ -32,7 +32,7 @@ $app->post('/', function () use ($app) {
 	$body = $request->getBody();
 	$input = json_decode($body);
 
-	echo $dbc->set_note($input->note);
+	echo $dbc->set_note($input);
 
 });
 
