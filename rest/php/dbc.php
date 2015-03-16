@@ -53,6 +53,12 @@ class DBC {
 
 
 	//Public Interface
+	public function get_characters()
+	{
+		return $this->process("SELECT id, name FROM characters");
+	}
+
+
 	public function get_notes($cid)
 	{
 

@@ -1,8 +1,46 @@
+var app = angular.module('NotesApp', []);
+
+/**
+ * Character Selector
+ * @return {[type]} [description]
+ */
+(function(){
+
+	"use strict";
+
+	app.controller('CharacterCtrl', ['$scope', '$http', function($scope, $http) {
+
+		$scope.cid = 0;
+
+		$scope.allCharacters = [];
+
+		$http.get('rest/characters').
+			success(function(data, status, headers, config) {
+
+				$scope.allCharacters = data;
+
+			}).
+			error(function(data, status, headers, config) {
+
+				console.log('failed to get characters');
+
+			});
+	}]);
+
+}());
+
+
+
+
+
+/**
+ * Notes App
+ * @return {[type]} [description]
+ */
 (function() {
 
 	"use strict";
 
-	var app = angular.module('NotesApp', []);
 
 	//controllers
 	app.controller('NotesCtrl', ['$scope', '$http', function($scope, $http) {
