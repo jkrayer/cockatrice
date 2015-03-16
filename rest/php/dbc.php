@@ -53,9 +53,16 @@ class DBC {
 
 
 	//Public Interface
-	public function get_notes()
+	public function get_notes($cid)
 	{
-		return $this->process('SELECT * FROM character_notes');
+
+		$cid = (int) $cid;
+
+		if (!is_int($cid)) {
+			die('get_notes needs a numeric id');
+		}
+
+		return $this->process("SELECT * FROM character_notes WHERE character_id = $cid");
 	}
 
 

@@ -13,14 +13,13 @@ $app = new \Slim\Slim(array(
 $dbc = new DBC('localhost', 'char_jkrayer', 'char_jkrayer', 'char_jkrayer');
 
 
-$app->get('/', function() {
+$app->get('/:cid', function($cid) use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
-	$app = $GLOBALS['app'];
 
 	$app->response()->header("Content-Type", "application/json");
 
-	echo $dbc->get_notes();
+	echo $dbc->get_notes($cid);
 
 });
 

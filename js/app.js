@@ -9,7 +9,7 @@
 
 		$scope.notes = [];
 
-		$http.get('rest').
+		$http.get('rest/1').
 			success(function(data, status, headers, config) {
 				$scope.notes = data;
 			}).
