@@ -13,7 +13,8 @@ $app = new \Slim\Slim(array(
 $dbc = new DBC('localhost', 'char_jkrayer', 'char_jkrayer', 'char_jkrayer');
 
 
-$app->get('/characters', function() use ($app) {
+//
+$app->get('/character', function() use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
 
@@ -24,17 +25,19 @@ $app->get('/characters', function() use ($app) {
 });
 
 
-$app->get('/:cid', function($cid) use ($app) {
+//
+$app->get('/character/:id', function($id) use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
 
 	$app->response()->header("Content-Type", "application/json");
 
-	echo $dbc->get_notes($cid);
+	echo $dbc->get_character( intval($id) );
 
 });
 
 
+/*
 $app->post('/', function () use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
@@ -46,9 +49,6 @@ $app->post('/', function () use ($app) {
 
 });
 
-
-
-/*
 $app->get('/:id', function ($id) {
 	$dbc = $GLOBALS['dbc'];
 	echo $dbc->get_note($id);
@@ -59,7 +59,6 @@ $app->put('/:id', function ($id) {
 	echo "put home $id";
 });
 
-
 $app->delete('/:id', function ($id) {
 	//update the note with the given id
 	echo "delete home $id";
@@ -68,6 +67,4 @@ $app->delete('/:id', function ($id) {
 
 $app->run();
 
-
 ?>
-

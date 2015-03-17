@@ -59,6 +59,18 @@ class DBC {
 	}
 
 
+	public function get_character($id = 0)
+	{
+
+		if ($id === 0 || !is_int($id)) {
+			return "Invalid argument supplied to get_character";
+		}
+
+		return $this->process("SELECT * FROM characters WHERE id = $id");
+
+	}
+
+
 	public function get_notes($cid)
 	{
 
