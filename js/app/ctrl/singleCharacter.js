@@ -6,7 +6,9 @@ app.controller('SingleCharacterCtrl', ['$scope', '$http', '$routeParams', functi
 
 	$scope.singleCharacter = {};
 
-	$http.get('rest/character/' + $routeParams.id).
+	$scope.cid = $routeParams.id;
+
+	$http.get('rest/character/' + $scope.cid).
 		success(function(data, status, headers, config) {
 			$scope.singleCharacter = data[0];
 		}).
