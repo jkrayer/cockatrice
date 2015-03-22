@@ -37,18 +37,33 @@ $app->get('/character/:id', function($id) use ($app) {
 });
 
 
-/*
-$app->post('/', function () use ($app) {
+//
+$app->get('/note/:id', function ($id) {
 
 	$dbc = $GLOBALS['dbc'];
+
+	echo $dbc->get_notes($id);
+
+});
+
+
+//
+$app->post('/note/', function () use ($app) {
+
+	$dbc = $GLOBALS['dbc'];
+
 	$request = $app->request();
+
 	$body = $request->getBody();
+
 	$input = json_decode($body);
 
 	echo $dbc->set_note($input);
 
 });
 
+
+/*
 $app->get('/:id', function ($id) {
 	$dbc = $GLOBALS['dbc'];
 	echo $dbc->get_note($id);
