@@ -1,3 +1,28 @@
-<h1>
-	{{singleCharacter.name}}
-</h1>
+<div class="row">
+
+	<div class="col-md-9">
+		<h1>
+			{{singleCharacter.name}}
+		</h1>
+	</div>
+
+	<div ng-controller="NotesCtrl" class="col-md-3 notes">
+
+		<div id="app-notes" class="notes-list">
+			<note ng-repeat="note in notes" test-val="theTestValue"></note>
+			<!-- Add a click event to notes to add to form for editing -->
+		</div>
+
+		<form ng-controller="NoteFormCtrl" ng-submit="submitNote($event)" class="notes-form">
+			<!-- add submit to rest service to form -->
+			<!-- <input type="hidden" name="id" /> -->
+			<div class="form-group">
+				<label for="note-input" class="sr-only">Note</label>
+				<textarea name="note" id="note-input" class="form-control" rows="3"></textarea>
+			</div>
+			<button type="submit" class="btn btn-primary btn-block">Submit</button>
+		</form>
+
+	</div>
+
+</div>
