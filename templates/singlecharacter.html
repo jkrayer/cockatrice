@@ -1,10 +1,56 @@
 <div class="row">
 
 	<div class="col-md-9">
-		<h1>
-			{{singleCharacter.name}}
-		</h1>
+
+		<header>
+			<h1>{{singleCharacter.name}}</h1>
+			<dl>
+				<dt>Class</dt>
+				<dd>{{singleCharacter.klass}}</dd>
+				<dt>Background</dt>
+				<dd>{{singleCharacter.background}}</dd>
+				<dt>Faction</dt>
+				<dd>{{singleCharacter.faction}}</dd>
+				<dt>Race</dt>
+				<dd>{{singleCharacter.race}}</dd>
+				<dt>Alignment</dt>
+				<dd>{{singleCharacter.alignment}}</dd>
+				<dt>Level/<abbr="Experience Points">XP</abbr></dt>
+				<dd>{{singleCharacter.level}}</dd>
+			</dl>
+		</header>
+
+		<p>Prof Bonus +{{singleCharacter.profBonus}}</p>
+
+		<dl>
+			<dt>Strength</dt>
+			<dd>{{singleCharacter.strength.score}}</dd>
+			<dd>{{singleCharacter.strength.bonus}}</dd>
+			<dd>Save</dd>
+			<dd>Skills
+				<dl>
+					<dt>Athletics</dt>
+					<dd></dd>
+				</dl>
+			</dd>
+		</dl>
+
+
+
+
+
 	</div>
+
+
+
+
+
+
+
+
+
+
+
 
 	<div ng-controller="NotesCtrl" class="col-md-3 notes">
 
