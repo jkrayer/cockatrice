@@ -80,7 +80,7 @@ class DBC {
 			die('get_notes needs a numeric id');
 		}
 
-		return $this->process("SELECT * FROM character_notes WHERE character_id = $cid");
+		return $this->process("SELECT * FROM character_notes WHERE character_id = $cid ORDER BY id DESC");
 	}
 
 

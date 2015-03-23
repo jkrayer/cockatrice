@@ -34,7 +34,7 @@ app.controller('NoteFormCtrl', ['$scope', '$http', function($scope, $http) {
 		$http.post('rest/note', data).
 			success(function(data, status, headers, config) {
 				//console.log(data, status, headers, config);
-				$scope.notes.push(data[0]);
+				$scope.notes.unshift(data[0]);
 				//technically should check if the new lenght of greater than
 				//the former link before doing this
 				$event.originalTarget[0].value = '';
