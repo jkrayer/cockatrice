@@ -10,7 +10,9 @@ app.controller('SingleCharacterCtrl', ['$scope', '$http', '$routeParams', functi
 
 	$http.get('rest/character/' + $scope.cid).
 		success(function(data, status, headers, config) {
-			$scope.singleCharacter = data[0];
+
+			$scope.singleCharacter = Berramir(data[0]);
+
 		}).
 		error(function(data, status, headers, config) {
 			console.log('failed to get characters');
