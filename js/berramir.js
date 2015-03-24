@@ -1,13 +1,11 @@
 // var Berramir = Berramir || function () {};
 
-
 function Berramir (obj) {
 
 	obj.level = setLevel();
 	obj.profBonus = setBonus();
 	parseScores();
-	parseProf();	
-
+	parseProf();
 
 	function setLevel () {
 
@@ -34,21 +32,27 @@ function Berramir (obj) {
 
 
 	function getBonus(score) {
-		return Math.round((score / 2) - 5);
+		return Math.floor((score / 2) - 5);
 	}
 
 
 	function parseScores() {
 
-		var scores = ['strength', 'dexterity', 'constitution', 'intelligence', 'widsom', 'charisma'],
-			key, score, val;
+		var key, val;
 
-		for (key in scores) {
-			score = scores[key];
-			val = parseInt(obj[score], 10);
-			obj[score] = {};
-			obj[score]['score'] = val;
-			obj[score]['bonus'] = getBonus(val);
+		obj.scores = {
+			'strength': {},
+			'dexterity': {},
+			'constitution': {},
+			'intelligence': {},
+			'wisdom': {},
+			'charisma': {}
+		};
+
+		for (key in obj.scores) {
+			val = obj.scores[key]['score'] = parseInt(obj[key], 10);
+			obj.scores[key]['bonus'] = getBonus(val);
+			obj.scores[key]['name'] = key;
 		}
 
 	}
