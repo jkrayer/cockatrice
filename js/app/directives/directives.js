@@ -17,3 +17,21 @@ app.directive('score', function() {
 		replace: true
 	};
 });
+
+
+app.directive('save', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/save.html',
+		replace: true
+	};
+});
+
+
+app.directive('skills', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/skills.html',
+		replace: true
+	};
+});
