@@ -25,11 +25,15 @@ app.controller('NoteFormCtrl', ['$scope', '$http', function($scope, $http) {
 
 	$scope.submitNote = function ($event) {
 
-		var data = {
-			character_id: $scope.cid,
-			date: Date.now(),
-			note: $event.originalTarget[0].value
-		};
+		var textArea = $($event.currentTarget).find('textarea').val().trim(),
+			data = {
+				character_id: $scope.cid,
+				date: Date.now()
+			}
+
+		if (textArea === '') { return false; }
+
+		data.note = textArea;
 
 		$http.post('rest/note', data).
 			success(function(data, status, headers, config) {
@@ -37,7 +41,7 @@ app.controller('NoteFormCtrl', ['$scope', '$http', function($scope, $http) {
 				$scope.notes.unshift(data[0]);
 				//technically should check if the new lenght of greater than
 				//the former link before doing this
-				$event.originalTarget[0].value = '';
+				//$event.originalTarget[0].value = '';
 				//console.log('p', data, status, headers, config);
 				// this callback will be called asynchronously
 				// when the response is available
@@ -47,6 +51,7 @@ app.controller('NoteFormCtrl', ['$scope', '$http', function($scope, $http) {
 				// called asynchronously if an error occurs
 				// or server returns response with an error status.
 			});
+
 	};
 
 }]);
