@@ -8,3 +8,12 @@ app.directive('note', function(){
 		replace: true
 	};
 });
+
+
+app.directive('score', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/score.html',
+		replace: true
+	};
+});
