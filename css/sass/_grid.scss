@@ -1,0 +1,40 @@
+//
+// .grid-
+//
+.wrapper-grid { width: 100%; } /*set max site width*/
+
+/* Apply me to .grid-* */
+[class^=grid-] {
+	box-sizing: border-box;
+	padding: 0 1vw;
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {
+
+	[class^=grid-] { float: left; }
+
+	.grid-3  { width: 3%; }
+	.grid-30 { width: 30%; }
+	.grid-70 { width: 70%; }
+	.grid-97 { width: 97%; }
+
+}
+
+/*Clearfix .wrapper-grid and [class^=grid-]*/
+.clearfix:before,
+.clearfix:after,
+.wrapper-grid:before,
+.wrapper-grid:after,
+[class^=grid-]:before,
+[class^=grid-]:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after,
+.wrapper-grid:after,
+[class^=grid-]:after {
+	clear: both;
+}

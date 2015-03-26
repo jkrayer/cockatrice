@@ -1,0 +1,39 @@
+//
+// Reset
+//
+html, body,
+h1, h2, h3, h4, h5, h6,
+p,
+dl, dt, dd {
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	background-color: #fff;
+}
+
+a { outline: none; }
+
+a img { display: block; }
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+label { cursor: pointer; }
+
+[aria-hidden=true] {
+	display: none;
+	visibility: hidden;
+}
+
+b, strong, .bold {
+	font-weight: 600;
+}
+
+i, em, .italic {
+	font-style: italic;
+}
