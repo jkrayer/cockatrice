@@ -55,7 +55,7 @@ class DBC {
 	//Public Interface
 	public function get_characters()
 	{
-		return $this->process("SELECT id, name FROM characters");
+		return $this->process("SELECT id, name, xp, race, klass, brief FROM characters");
 	}
 
 
