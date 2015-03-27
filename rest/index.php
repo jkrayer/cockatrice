@@ -13,7 +13,7 @@ $app = new \Slim\Slim(array(
 $dbc = new DBC('localhost', 'char_jkrayer', 'char_jkrayer', 'char_jkrayer');
 
 
-//
+//List All Characters
 $app->get('/character', function() use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
