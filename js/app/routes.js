@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
 		when('/character/:id/notes', {
 			templateUrl: 'templates/character/notes.html',
-			//controller: 'SingleCharacterCtrl'
+			controller: 'NotesListCtrl'
 		}).
 
 		otherwise({
