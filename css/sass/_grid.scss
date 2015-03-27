@@ -9,12 +9,19 @@
 
 .wrapper-grid { width: 100%; } /*set max site width*/
 .full-grid {
+	box-sizing: border-box;
 	width: 100%;
 	padding: 0 $column * 2vw;
 }
 .grid-2 { width: $column * 2vw; }
+.grid-half {
+	width: 50%;
+	padding: 0 $column + vw;
+}
 
 
+.grid-alpha { padding-left: 0; }
+.grid-omega { padding-right: 0; }
 
 
 /*Clearfix .wrapper-grid and [class^=grid-]*/
