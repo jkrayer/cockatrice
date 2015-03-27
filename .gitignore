@@ -1,2 +1,6 @@
 #
 .DS*
+
+#All compiled css files
+*.css
+
