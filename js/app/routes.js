@@ -7,14 +7,19 @@ app.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.
 
+		when('/character/', {
+			templateUrl: 'templates/home.html',
+			controller: 'ListCharacterCtrl'
+		}).
+
 		when('/character/:id', {
 			templateUrl: 'templates/singlecharacter.html',
 			controller: 'SingleCharacterCtrl'
 		}).
 
-		when('/character/', {
-			templateUrl: 'templates/home.html',
-			controller: 'ListCharacterCtrl'
+		when('/character/:id/notes', {
+			templateUrl: 'templates/character/notes.html',
+			//controller: 'SingleCharacterCtrl'
 		}).
 
 		otherwise({
