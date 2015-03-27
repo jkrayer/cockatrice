@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
 
 		otherwise({
 			redirectTo: '/',
-			templateUrl: 'templates/home.html',
+			templateUrl: 'templates/home/',
 			controller: 'ListCharacterCtrl'
 		});
 
