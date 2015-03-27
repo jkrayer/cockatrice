@@ -1,32 +1,29 @@
 //
 // .grid-
 //
-.wrapper-grid { width: 100%; } /*set max site width*/
 
-/* Apply me to .grid-* */
 [class^=grid-] {
 	box-sizing: border-box;
-	padding: 0 1vw;
+	float: left;
 }
 
-@media (min-width: 768px) {}
-
-@media (min-width: 1024px) {
-
-	[class^=grid-] { float: left; }
-
-	.grid-3  { width: 3%; }
-	.grid-30 { width: 30%; }
-	.grid-70 { width: 70%; }
-	.grid-97 { width: 97%; }
-
+.wrapper-grid { width: 100%; } /*set max site width*/
+.full-grid {
+	width: 100%;
+	padding: 0 $column * 2vw;
 }
+.grid-2 { width: $column * 2vw; }
+
+
+
 
 /*Clearfix .wrapper-grid and [class^=grid-]*/
 .clearfix:before,
 .clearfix:after,
 .wrapper-grid:before,
 .wrapper-grid:after,
+.full-grid:before,
+.full-grid:after,
 [class^=grid-]:before,
 [class^=grid-]:after {
 	content: " ";
@@ -35,6 +32,7 @@
 
 .clearfix:after,
 .wrapper-grid:after,
+.full-grid:after,
 [class^=grid-]:after {
 	clear: both;
 }
