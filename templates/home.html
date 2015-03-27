@@ -1,9 +1,9 @@
 <div class="page-home">
 	<ul class="clearfix list-reset">
-		<li ng-repeat="character in allCharacters" class="grid-half" ng-class-odd="'grid-alpha'" ng-class-even="'grid-omega'">
+		<li ng-repeat="character in allCharacters" class="grid-half list-item" ng-class-odd="'grid-alpha'" ng-class-even="'grid-omega'">
 			<article>
 				<header>
-					<h2><a href="#character/{{character.id}}">{{character.name}}</a></h2>
+					<h2><a ng-href="#character/{{character.id}}/notes">{{character.name}}</a></h2>
 					<p class="sub-head">{{character.level}}{{character.levelSuffix}} Level {{character.klass}}</p>
 				</header>
 				<p>{{character.brief}}</p>
