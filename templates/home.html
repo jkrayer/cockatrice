@@ -1,7 +1,13 @@
-<h1>Home</h1>
-
-<ul>
-	<li ng-repeat="character in allCharacters">
-		<a href="#character/{{character.id}}">{{character.name}}</a>
-	</li>
-</ul>
+<div class="page-home">
+	<ul class="clearfix list-reset">
+		<li ng-repeat="character in allCharacters" class="grid-half" ng-class-odd="'grid-alpha'" ng-class-even="'grid-omega'">
+			<article>
+				<header>
+					<h2><a href="#character/{{character.id}}">{{character.name}}</a></h2>
+					<p class="sub-head">{{character.level}}{{character.levelSuffix}} Level {{character.klass}}</p>
+				</header>
+				<p>{{character.brief}}</p>
+			</article>
+		</li>
+	</ul>
+</div>
