@@ -37,3 +37,36 @@ b, strong, .bold {
 i, em, .italic {
 	font-style: italic;
 }
+
+
+//
+// Type
+//
+html,
+body {
+	font-family: $family;
+	letter-spacing: .025em;
+	color: $SDBlack;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+}
+h2 {
+	font-size: 1.5rem;
+	line-height: 1;
+	text-transform: uppercase;
+	a {
+		text-decoration: none;
+		color: $SDBlack;
+	}
+}
+.sub-head {
+	font-size: .75rem;
+	color: $gray;
+}
+
+p {
+	font-size: .75rem;
+	line-height: 1.5;
+}
