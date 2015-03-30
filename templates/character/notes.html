@@ -1,1 +1,21 @@
-<h1>Hello World.</h1>
+<div class="wrapper-grid">
+	<div class="grid-half">
+		<h2 class="header-page">Notes</h2>
+	</div>
+</div>
+
+<ul ng-controller="NotesListCtrl" class="list-reset clearfix">
+
+	<li ng-repeat="note in notes" class="grid-third">
+
+		<article class="note-excerpt" data-id="{{note.id}}">
+
+			<p class="subtext">{{note.date  | date:'MM/dd/yyyy @ h:mma'}}</p>
+
+			<p class="excerpt">{{note.note}}</p>
+
+		</article>
+
+	</li>
+
+</ul>
