@@ -4,18 +4,23 @@ var app = app || angular.module('CharacterApp', ['ngRoute']);
 //
 app.controller('SingleCharacterCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
 
+	"use strict";
+
 	$scope.singleCharacter = {};
 
-	$scope.cid = $routeParams.id;
+	if (!$routeParams.id) { return false; }
 
-	$http.get('rest/character/' + $scope.cid).
+	$http.get('rest/character/' + $routeParams.id).
 		success(function(data, status, headers, config) {
 
-			$scope.singleCharacter = new Berramir(data[0]);
+			$scope.singleCharacter = data[0];
 
 		}).
+
 		error(function(data, status, headers, config) {
-			console.log('failed to get characters');
+
+			console.error('error getting single charater, SingleCharacterCtrl');
+
 		});
 
 }]);
