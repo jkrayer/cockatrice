@@ -65,8 +65,15 @@ h2 {
 	font-size: .75rem;
 	color: $gray;
 }
+.header-page { margin: 19px 0; }
 
 p {
 	font-size: .75rem;
 	line-height: 1.5;
+}
+.subtext {
+	color: $gray;
+}
+.excerpt {
+	text-overflow: ellipsis;
 }
