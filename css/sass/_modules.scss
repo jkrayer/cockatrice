@@ -25,9 +25,15 @@
 // Note
 //
 .note {
+
 	&-excerpt {
 		max-height: 144px;
 		margin-bottom: 65px;
 		overflow: hidden;
+
+		&-list {
+			margin: 50px 0;
+		}
+
 	}
 }
