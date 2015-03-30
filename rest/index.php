@@ -25,7 +25,7 @@ $app->get('/character', function() use ($app) {
 });
 
 
-//
+//Get a Single Character
 $app->get('/character/:id', function($id) use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
@@ -37,17 +37,17 @@ $app->get('/character/:id', function($id) use ($app) {
 });
 
 
-//
-$app->get('/note/:id', function ($id) {
+//Get all notes for one character id
+$app->get('/note/:cid', function ($cid) {
 
 	$dbc = $GLOBALS['dbc'];
 
-	echo $dbc->get_notes($id);
+	echo $dbc->get_notes($cid);
 
 });
 
 
-//
+//Add a single Note
 $app->post('/note/', function () use ($app) {
 
 	$dbc = $GLOBALS['dbc'];
@@ -61,6 +61,34 @@ $app->post('/note/', function () use ($app) {
 	echo $dbc->set_note($input);
 
 });
+
+
+//Add a single Note
+$app->put('/note/', function () use ($app) {
+
+	$dbc = $GLOBALS['dbc'];
+
+	$request = $app->request();
+
+	$body = $request->getBody();
+
+	$input = json_decode($body);
+
+	echo $dbc->update_note($input);
+
+});
+
+
+//Get a Single Note by id
+$app->get('/note/:cid/:id', function ($id, $cid) {
+
+	$dbc = $GLOBALS['dbc'];
+
+	echo $dbc->get_single_note($id, $cid);
+
+});
+
+
 
 
 /*
