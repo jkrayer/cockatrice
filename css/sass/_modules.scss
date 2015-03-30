@@ -20,3 +20,14 @@
 }
 
 .list-item { margin-bottom: 65px !important; }
+
+//
+// Note
+//
+.note {
+	&-excerpt {
+		max-height: 144px;
+		margin-bottom: 65px;
+		overflow: hidden;
+	}
+}
