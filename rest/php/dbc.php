@@ -84,6 +84,17 @@ class DBC {
 	}
 
 
+	//
+	public function get_single_note($id, $cid) {
+
+		$query_string = "SELECT * FROM character_notes WHERE id = %d AND character_id = %d";
+
+		$query = sprintf($query_string, $id, $cid);
+
+		return $this->process($query);
+
+	}
+
 	//Public Interface
 	public function get_last_note()
 	{
@@ -106,6 +117,22 @@ class DBC {
 
 		return $this->get_last_note();
 		//return $this->_mysql->insert_id;
+	}
+
+
+	//
+	public function update_note($data)
+	{
+		$query_string = "UPDATE character_notes SET note = '%s' WHERE id = %d";
+
+		$escaped_string = mysqli_real_escape_string ($this->_mysql, $data->note);
+
+		$id = (int)$data->id;
+
+		$query = sprintf($query_string, $escaped_string, $id);
+
+		return $this->_mysql->query($query);
+
 	}
 
 
