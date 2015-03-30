@@ -5,13 +5,13 @@
 			<h2 class="header-page">Notes</h2>
 		</div>
 		<div class="grid-half">
-			<form id="notes-filter">
-				<input type="text" ng-model="notesFilter"/>
+			<form id="notes-filter" class="fa fa-filter">
+				<input type="text" ng-model="notesFilter" autofocus />
 			</form>
 		</div>
 	</div>
 
-	<ul class="list-reset clearfix">
+	<ul class="note-excerpt-list list-reset clearfix">
 
 		<li ng-repeat="note in notes | filter:notesFilter" class="grid-third">
 
