@@ -13,7 +13,8 @@
 	width: 100%;
 	padding: 0 $column * 1vw;
 }
-.grid-2 { width: $column * 2vw; }
+.grid-2 { width: $column * 2%; }
+.grid-30 { width: $column * 30%; }
 .grid-half {
 	width: 50%;
 	padding: 0 $column + vw !important;
