@@ -11,13 +11,20 @@
 .full-grid {
 	box-sizing: border-box;
 	width: 100%;
-	padding: 0 $column * 2vw;
+	padding: 0 $column * 1vw;
 }
 .grid-2 { width: $column * 2vw; }
 .grid-half {
 	width: 50%;
-	padding: 0 $column + vw;
+	padding: 0 $column + vw !important;
 }
+.grid-third {
+	width: 31.25%;
+	padding: 0 $column + vw !important;
+}
+
+
+
 
 
 .grid-alpha { padding-left: 0; }
