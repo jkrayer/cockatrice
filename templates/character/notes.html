@@ -4,7 +4,7 @@
 
 	<div class="wrapper-grid">
 		<div class="grid-half">
-			<h2 class="header-page">Notes</h2>
+			<h2 class="header-page">Notes <a ng-href="#/character/{{singleCharacter.id}}/addnote" title="Add Note"><span class="fa fa-plus"></span></a></h2>
 		</div>
 		<div class="grid-half">
 			<form id="notes-filter" class="fa fa-filter">
@@ -22,6 +22,8 @@
 				<p class="subtext">{{note.date  | date:'MM/dd/yyyy @ h:mma'}}</p>
 
 				<p class="excerpt">{{note.note}}</p>
+
+				<p><a ng-href="#/character/{{singleCharacter.id}}/addnote/{{note.id}}">Edit</a></p>
 
 			</article>
 
