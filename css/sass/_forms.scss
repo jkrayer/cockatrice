@@ -1,0 +1,20 @@
+
+#notes-filter {
+	padding-left: 32px;
+	border-radius: 5px;
+	margin-top: 15px;
+	position: relative;
+	background-color: $ltgray;
+	color: #fff;
+
+	input {
+		color: $SDBlack;
+	}
+
+	&.fa-filter:before {
+		position: absolute;
+		top: 7px;
+		left: 10px;
+	}
+
+}
