@@ -1,0 +1,11 @@
+<header class="global-header wrapper-grid">
+
+	<div class="grid-2">
+		<button type="button" id="app-trigger-global-nav" class="button button-clear" title="Toggle Navigation"><span class="fa fa-bars fa-lg"></span></button>
+	</div>
+
+	<div class="grid-30"  ng-controller="SingleCharacterCtrl">
+		<h1>{{singleCharacter.name}} <span class="subhead">{{singleCharacter.level}}{{singleCharacter.levelSuffix}} {{singleCharacter.level ? 'Level' : ''}} {{singleCharacter.klass}}</span></h1>
+	</div>
+
+</header>
