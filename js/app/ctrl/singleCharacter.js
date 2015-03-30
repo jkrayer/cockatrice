@@ -2,18 +2,18 @@
 var app = app || angular.module('CharacterApp', ['ngRoute']);
 
 //
-app.controller('SingleCharacterCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+app.controller('SingleCharacterCtrl', ['$rootScope', '$http', '$routeParams', function($rootScope, $http, $routeParams) {
 
 	"use strict";
 
-	$scope.singleCharacter = {};
+	$rootScope.singleCharacter = {};
 
 	if (!$routeParams.id) { return false; }
 
 	$http.get('rest/character/' + $routeParams.id).
 		success(function(data, status, headers, config) {
 
-			$scope.singleCharacter = data[0];
+			$rootScope.singleCharacter = data[0];
 
 		}).
 
