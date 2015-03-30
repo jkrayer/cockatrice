@@ -38,7 +38,19 @@ i, em, .italic {
 	font-style: italic;
 }
 
-input { width: 100%; }
+form,
+input {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+input {
+	padding: .5em 1em;
+	border: $rule;
+	border-radius: 5px;
+	font-family: $family;
+	font-size: .875rem;
+}
 
 
 //
