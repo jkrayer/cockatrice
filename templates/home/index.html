@@ -1,10 +1,12 @@
-<div class="page-home">
+<global-header></global-header>
+
+<div class="page-home full-grid">
 	<ul class="clearfix list-reset">
 		<li ng-repeat="character in allCharacters" class="grid-half list-item">
 			<article>
 				<header>
 					<h2><a ng-href="#character/{{character.id}}/notes">{{character.name}}</a></h2>
-					<p class="sub-head">{{character.level}}{{character.levelSuffix}} Level {{character.klass}}</p>
+					<p class="subhead">{{character.level}}{{character.levelSuffix}} Level {{character.klass}}</p>
 				</header>
 				<p>{{character.brief}}</p>
 			</article>
