@@ -39,12 +39,14 @@ i, em, .italic {
 }
 
 form,
-input {
+input,
+textarea {
 	box-sizing: border-box;
 	width: 100%;
 }
 
-input {
+input,
+textarea {
 	padding: .5em 1em;
 	border: $rule;
 	border-radius: 5px;
