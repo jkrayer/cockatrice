@@ -9,6 +9,8 @@ app.controller('NotesListCtrl', ['$scope', '$http', '$routeParams', function($sc
 
 	$scope.notes = [];
 
+	$scope.notesFilter = '';
+
 	$http.get('rest/note/' + $routeParams.id).
 
 		success(function(data, status, headers, config) {
