@@ -22,6 +22,11 @@ app.config(['$routeProvider', function($routeProvider) {
 			controller: 'NotesListCtrl'
 		}).
 
+		when('/character/:id/addnote', {
+			templateUrl: 'templates/character/notes-add.html',
+			controller: 'NotesAddCtrl'
+		}).
+
 		otherwise({
 			redirectTo: '/',
 			templateUrl: 'templates/home/',
