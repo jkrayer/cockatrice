@@ -7,7 +7,7 @@ app.controller('NotesAddCtrl', ['$scope', '$http', '$routeParams', '$location', 
 
 	"use strict";
 
-	$scope.newNote = 'This is a start value';
+	$scope.newNote = '';
 
 	$scope.addNote = function() {
 
