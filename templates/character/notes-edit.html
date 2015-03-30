@@ -1,0 +1,25 @@
+<global-header></global-header>
+
+<div ng-controller="NotesEditCtrl" class="full-grid">
+
+	<div class="wrapper-grid">
+		<div class="grid-half">
+			<h2 class="header-page">Add Note</h2>
+		</div>
+	</div>
+
+	<div class="wrapper-grid">
+		<div class="grid-half">
+			<form ng-submit="editNote()" id="note-edit" novalidate>
+				<div class="input-wrapper">
+					<textarea ng-model="theNewNote" rows="10" autofocus></textarea>
+				</div>
+				<button type="submit" class="button button-primary">Add Note</button>
+			</form>
+		</div>
+		<div class="grid-half">
+			<div class="note-view">{{theNewNote}}</div>
+		</div>
+	</div>
+
+</div>
