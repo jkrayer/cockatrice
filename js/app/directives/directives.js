@@ -35,3 +35,12 @@ app.directive('skills', function() {
 		replace: true
 	};
 });
+
+
+app.directive('globalHeader', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'templates/global/index.html',
+		replace: true
+	};
+});
