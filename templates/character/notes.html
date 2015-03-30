@@ -1,21 +1,30 @@
-<div class="wrapper-grid">
-	<div class="grid-half">
-		<h2 class="header-page">Notes</h2>
+<div ng-controller="NotesListCtrl">
+
+	<div class="wrapper-grid">
+		<div class="grid-half">
+			<h2 class="header-page">Notes</h2>
+		</div>
+		<div class="grid-half">
+			<form id="notes-filter">
+				<input type="text" ng-model="notesFilter"/>
+			</form>
+		</div>
 	</div>
+
+	<ul class="list-reset clearfix">
+
+		<li ng-repeat="note in notes | filter:notesFilter" class="grid-third">
+
+			<article class="note-excerpt" data-id="{{note.id}}">
+
+				<p class="subtext">{{note.date  | date:'MM/dd/yyyy @ h:mma'}}</p>
+
+				<p class="excerpt">{{note.note}}</p>
+
+			</article>
+
+		</li>
+
+	</ul>
+
 </div>
-
-<ul ng-controller="NotesListCtrl" class="list-reset clearfix">
-
-	<li ng-repeat="note in notes" class="grid-third">
-
-		<article class="note-excerpt" data-id="{{note.id}}">
-
-			<p class="subtext">{{note.date  | date:'MM/dd/yyyy @ h:mma'}}</p>
-
-			<p class="excerpt">{{note.note}}</p>
-
-		</article>
-
-	</li>
-
-</ul>
