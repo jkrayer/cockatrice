@@ -8,4 +8,18 @@
 		</div>
 	</div>
 
+	<div class="wrapper-grid">
+		<div class="grid-half">
+			<form ng-submit="addNote($event)" id="note-add" novalidate>
+				<div class="input-wrapper">
+					<textarea ng-model="newNote" rows="10" placeholder="Note" autofocus></textarea>
+				</div>
+				<button type="submit" class="button button-primary">Add Note</button>
+			</form>
+		</div>
+		<div class="grid-half">
+			<div class="note-view">{{newNote}}</div>
+		</div>
+	</div>
+
 </div>
