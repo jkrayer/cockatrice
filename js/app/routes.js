@@ -17,6 +17,7 @@ app.config(['$routeProvider', function($routeProvider) {
 			controller: 'SingleCharacterCtrl'
 		}).
 
+		//get all notes for one character
 		when('/character/:id/notes', {
 			templateUrl: 'templates/character/notes.html',
 			controller: 'NotesListCtrl'
@@ -25,6 +26,11 @@ app.config(['$routeProvider', function($routeProvider) {
 		when('/character/:id/addnote', {
 			templateUrl: 'templates/character/notes-add.html',
 			controller: 'NotesAddCtrl'
+		}).
+
+		when('/character/:id/addnote/:noteid', {
+			templateUrl: 'templates/character/notes-edit.html',
+			controller: 'NotesEditCtrl'
 		}).
 
 		otherwise({
