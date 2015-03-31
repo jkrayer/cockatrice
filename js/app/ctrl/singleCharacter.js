@@ -2,7 +2,7 @@
 var app = app || angular.module('CharacterApp', ['ngRoute']);
 
 //
-app.controller('SingleCharacterCtrl', ['$rootScope', '$http', '$routeParams', function($rootScope, $http, $routeParams) {
+app.controller('SingleCharacterCtrl', ['$rootScope', '$http', '$routeParams', 'SingleCharacterSvc', function($rootScope, $http, $routeParams, SingleCharacterSvc) {
 
 	"use strict";
 
@@ -13,7 +13,7 @@ app.controller('SingleCharacterCtrl', ['$rootScope', '$http', '$routeParams', fu
 	$http.get('rest/character/' + $routeParams.id).
 		success(function(data, status, headers, config) {
 
-			$rootScope.singleCharacter = data[0];
+			$rootScope.singleCharacter = SingleCharacterSvc.setLevel(data)[0];
 
 		}).
 
