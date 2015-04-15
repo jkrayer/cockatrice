@@ -4,3 +4,5 @@
 #All compiled css files
 *.css
 
+#bower
+bower_components
