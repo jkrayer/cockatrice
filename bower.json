@@ -1,0 +1,17 @@
+{
+  "name": "Cockatrice",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jkrayer/cockatrice",
+  "authors": [
+    "jkrayer <jameskrayer@yahoo.com>"
+  ],
+  "description": "Test drive Slim and Angular",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
