@@ -1,11 +1,10 @@
-#
+# MAC Files
 .DS*
 
-#All compiled css files
+# All compiled css files
 *.css
 
-#bower
+# Installers, Task Runners, External Libs, Oh My!
 bower_components
-
-#composer
+node_modules
 vendor
