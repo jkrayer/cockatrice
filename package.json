@@ -1,0 +1,22 @@
+{
+  "name": "Cockatrice",
+  "version": "0.0.0",
+  "description": "Test Drive Angualr and Slim",
+  "author": "James Krayer <jameskrayer@yahoo.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkrayer/cockatrice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkrayer/cockatrice/issues"
+  },
+  "homepage": "https://github.com/jkrayer/cockatrice",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-sass": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+  }
+}
